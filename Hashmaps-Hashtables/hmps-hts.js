@@ -41,3 +41,52 @@ console.log(hashmap)
 
 // console.log(hashmap)
 
+
+// Question 1.1:
+//Implement an algorithm to determine if a string has all unique character. What if you cannot use additional data structures?
+
+
+//Solution using a Map 
+let CheckIfUnique = (str) => {
+
+    let hashmap = new Map()
+
+    let str_array = Array.from(str)
+
+    let state = false;
+
+    str_array.forEach(element => {
+        
+        if(!hashmap.has(element)){
+
+            hashmap.set(element)
+            state = true
+
+        }else{
+            state = false
+        }
+    })
+
+    return state;
+
+}
+
+console.log(CheckIfUnique('ryu') + " using a Map" )
+
+
+//Solution using a set 
+let CheckIfUniqueSet = (str) => {
+    let mySetSize = new Set(str).size
+    
+    if(mySetSize == str.length){
+        return true
+    }else{
+        return false
+    }
+
+}
+
+
+console.log(CheckIfUniqueSet('ryu') + " using a Set" )
+
+
