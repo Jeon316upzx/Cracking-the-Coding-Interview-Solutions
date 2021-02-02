@@ -90,3 +90,36 @@ let CheckIfUniqueSet = (str) => {
 console.log(CheckIfUniqueSet('ryu') + " using a Set" )
 
 
+
+// Question 1.1:
+//Implement a function that reverses a null terminated string in Javascript?
+
+let reverse = (str) => {
+
+    let reversedstr = ''
+
+    if(!str || typeof str != 'string'){
+
+       return "Enter a string";
+
+    }else if (str.length < 2){
+
+         return str;
+
+    }
+
+    for( let count = str.length ; count >= 0 ; count--){
+        
+        reversedstr += str[count]
+
+    }
+
+    return reversedstr
+
+
+}
+
+
+console.log(reverse(45))
+
+
