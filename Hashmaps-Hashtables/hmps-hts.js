@@ -91,7 +91,7 @@ console.log(CheckIfUniqueSet('ryu') + " using a Set" )
 
 
 
-// Question 1.1:
+// Question 1.2:
 //Implement a function that reverses a null terminated string in Javascript?
 
 let reverse = (str) => {
@@ -121,5 +121,38 @@ let reverse = (str) => {
 
 
 console.log(reverse(45))
+
+
+
+// Question 1.3:
+//Given two strings, write a method to determine if one is a permutation of the other?
+
+
+let checkIfPermute = ( str1 , str2 ) => {
+
+    if(typeof str1 != 'string' || typeof str2 != 'string' || !str1 || !str2 ){
+
+        return "Enter a string";
+
+    }else if( str1.length < 2 || str2.length < 2 && str1 !== str2 ){
+
+        return "Not a permutation of one another";
+
+    }else{
+
+        return `${str1} is a permutation of the ${str2}`;
+
+    }
+
+
+    let permute_arr = []
+
+
+
+
+
+    return permute_arr
+
+}
 
 
