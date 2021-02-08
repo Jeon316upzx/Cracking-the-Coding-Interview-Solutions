@@ -171,13 +171,13 @@ let secondStr = Permute("bac")
 //Function checks if str1 is in str2 
 let checkIfStr1EqualsStr2 = (str1, str2) => {
 
-    for ( let i = 0 ; i < firstStr.length ; i ++){
+    for ( let i = 0 ; i < str1.length ; i ++){
    
-        for(let j = 0 ; j < secondStr.length ; j ++){
+        for(let j = 0 ; j < str2.length ; j ++){
     
     
-            if(firstStr[i] == secondStr[j]){
-                console.log(firstStr[i] + "=" + secondStr[j])
+            if(str1[i] == str2[j]){
+                console.log(str1[i] + "=" + str2[j])
                 return true
             }
         }
@@ -192,6 +192,40 @@ console.log(checkIfStr1EqualsStr2(firstStr, secondStr))
 
 
 
+// Question 1.4:
+//Write a method to replace all the spaces in a string with %20?
+
+let ReplaceStrWith = (str) => {
+
+    //Check if value is not a string
+    if( typeof str != 'string' ){
+
+        return "Enter a string"
+
+    }
+    
+    //Check if string length is lte 1
+    if(str.length <= 1){
+
+        return `${str}`
+
+    }
 
 
+    let strArr = str.split("")
+    console.log(strArr)
+
+    for( let i = 0; i < strArr.length ; i ++){
+
+        if(strArr[i] == " "){
+
+            console.log("YESS")
+
+        }
+
+    }
+
+}
+
+ReplaceStrWith("I am Mazi Uwa Chukwu  ")
 
