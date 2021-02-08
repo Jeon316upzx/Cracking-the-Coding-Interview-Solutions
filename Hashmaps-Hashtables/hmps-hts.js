@@ -213,19 +213,26 @@ let ReplaceStrWith = (str) => {
 
 
     let strArr = str.split("")
-    console.log(strArr)
+    let newStr = ''
+
+    // console.log(strArr)
 
     for( let i = 0; i < strArr.length ; i ++){
 
         if(strArr[i] == " "){
 
-            console.log("YESS")
+            strArr[i] = "%20"
+            
 
         }
 
     }
 
+    newStr = strArr.join('')
+
+    return newStr;
+
 }
 
-ReplaceStrWith("I am Mazi Uwa Chukwu  ")
+console.log(ReplaceStrWith("I am Mazi Uwa Chukwu  "))
 
