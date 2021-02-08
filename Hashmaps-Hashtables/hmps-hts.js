@@ -128,31 +128,70 @@ console.log(reverse(45))
 //Given two strings, write a method to determine if one is a permutation of the other?
 
 
-let checkIfPermute = ( str1 , str2 ) => {
+let Permute = ( str1 ) => {
 
-    if(typeof str1 != 'string' || typeof str2 != 'string' || !str1 || !str2 ){
+    //Handle some edge cases like is value a string? , is the length of str is Equal to 1
+
+    if(typeof str1 != 'string'){
 
         return "Enter a string";
 
-    }else if( str1.length < 2 || str2.length < 2 && str1 !== str2 ){
+    }else if (str1.length == 1) {
 
-        return "Not a permutation of one another";
-
-    }else{
-
-        return `${str1} is a permutation of the ${str2}`;
+        return `${str1}`;
 
     }
 
 
+
+
     let permute_arr = []
 
+    for ( let count = 0 ; count < str1.length; count ++){
 
+        let first_item = str1[count]
+        let left_over = str1.slice(0, count) + str1.slice(count + 1)
 
+        let Otherpermutes =  Permute(left_over)
 
+        for ( let i = 0 ; i < Otherpermutes.length ; i++){
+            permute_arr.push(first_item + Otherpermutes[i])
+        }
+
+    }
 
     return permute_arr
 
 }
+
+
+let firstStr = Permute("abc")
+let secondStr = Permute("bac")
+
+//Function checks if str1 is in str2 
+let checkIfStr1EqualsStr2 = (str1, str2) => {
+
+    for ( let i = 0 ; i < firstStr.length ; i ++){
+   
+        for(let j = 0 ; j < secondStr.length ; j ++){
+    
+    
+            if(firstStr[i] == secondStr[j]){
+                console.log(firstStr[i] + "=" + secondStr[j])
+                return true
+            }
+        }
+    
+    }
+    return false
+
+}
+
+
+console.log(checkIfStr1EqualsStr2(firstStr, secondStr))
+
+
+
+
 
 
